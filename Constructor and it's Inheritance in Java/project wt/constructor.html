@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+  <title>contructor</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <style>
+    body{
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      color: white;
+      font-size: large;
+    }
+    nav{
+    text-align: center;
+    margin-top: 5%;
+}
+a{
+    display: flexbox;
+    padding: 20px 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 30%;
+    transition: all 0.5s ease-in-out;
+    margin: 0px 15px;
+}
+a:hover
+{
+    background-color: antiquewhite;
+    color: black;
+    opacity: 60%;
+}
+  </style>
+</head>
+
+<body background="7.jpg">
+  <nav>
+    <a href="Home.html" <a href="#">Home</a></a>
+    <a href="basics_of_inheritance.html" <a href="#">Basics Of Inheritance</a></a>
+    <a href="types_of_inheritance.html" <a href="#">Types Of Inheritance</a></a>
+    <a href="constructor.html"<a href="#">Constructor In Inheritance</a></a>
+    <a href="About_us.html" <a href="#">About Us</a></a>
+  </nav>
+  <h1 class="n"><center><u>
+    Constructor Inheritance In Java</u>
+</center>
+  </h1>
+  <p>
+     In Java, constructor inheritance is the process of creating a subclass that inherits the constructor of its
+      parent class. Constructor inheritance can also be seen from various perspectives depending upon it's order 
+      of execution in the main method. One thing that must be kept in mind that the order of inheritance of
+       constructor also depend on the type of constructor being used in the class.
+  </p><p>
+Here is an example given below which may give you an idea of how constructor inheritance works.
+  </p>
+  <div class="codeblock"><textarea name="code" class="java" rows="37" cols="50"><code>
+/* Super Class */
+class SuperClass 
+{
+    /* Constructor */	
+	SuperClass()
+	{
+		System.out.println("SuperClass constructor executed.");
+	}
+}
+
+/* Sub Class */
+class SubClass extends SuperClass 
+{
+    /* Constructor */
+	SubClass()
+	{
+		System.out.println("SubClass constructor executed.");
+	}
+}
+
+public class OrderofExecution
+{
+    /* Driver Code */
+	public static void main(String args[]) 
+	{
+		/* Create instance of SubClass */
+		System.out.println("Order of constructor execution...");
+		new SubClass();	
+    }
+}
+</code>
+</textarea></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock3"><pre><p class="m">Order of constructor execution...
+SuperClass constructor executed.
+SubClass constructor executed.</p>
+</pre></div>
+  <h3>
+    Cases of Constructor Inheritance
+  </h3>
+  <p>There are broadly five cases in which the order of inheritance of constructor can be understood. The detailed description is as follows...
+  </p>
+  <ul style="list-style-type:circle;">
+  <li><p><strong>Case 1: </strong>When there is a non-parameterized constructor in the super class but no constructor in the subclass then the order will be something like this,<br>
+Constructor in SuperClass: SuperClass()<br>
+Constructor in SubClass: No constructor used<br>
+Order of execution: Superclass()<br>
+ </p>
+    <li><p><strong>Case 2: </strong>When there is non-parameterized constructor in both the super class and subclass then the order will be something like this,<br>
+Constructor in SuperClass: SuperClass()<br>
+Constructor in SubClass: Subclass()<br>
+Order of execution: Superclass()    	Subclass()
+ </p>
+     <li> <p><strong>Case 3: </strong>When there is non-parameterized constructor in both the super class and subclass, and a parameterized in the super class then, the order will be something like this,<br>
+        Constructor in SuperClass: SuperClass() SuperClass(<I>Arguments</I>)<br>
+Constructor in SubClass: SubClass()<br>
+Order of execution: Superclass() SubClass()<br>
+        Note: The parameterized constructor becomes idle as no super keyword is mentioned in the subclass to access it.
+ </p>
+        <li><p><strong>Case 4: </strong>When there is a non-parameterized constructor in the sub class, and a parameterized in the super class then, the order will be something like this,<br>
+        Constructor in SuperClass: SuperClass(<I>Arguments</I>)<br>
+Constructor in SubClass: SubClass()<br>
+Order of execution: ERROR<br>
+        Note: There will be an error because no "super" keyword has been used in the sub class to access the elements of the superclass.
+ </p>
+          <li><p><strong>Case 5: </strong>When there is no non-parameterized constructor in both the super class and subclass, and parameterized in both the super class and sub class then, the order will be something like this,<br>
+        Constructor in SuperClass: SuperClass(<I>Arguments</I>)<br>
+Constructor in SubClass: SubClass(<I>Arguments</I>)<br>
+Order of execution: ERROR<br>
+        Note: There will be an error until and unless the "super" keyword is used in the sub class because it will not be able to access the super class data members and methods.
+ </p>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title>basics of inheritance</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+      body{
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        color: white;
+        font-size: large;
+      }
+      nav{
+    text-align: center;
+    margin-top: 5%;
+}
+a{
+    display: flexbox;
+    padding: 20px 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 30%;
+    transition: all 0.5s ease-in-out;
+    margin: 0px 15px;
+}
+a:hover
+{
+    background-color: antiquewhite;
+    color: black;
+    opacity: 60%;
+}
+    </style>
+  </head>
+  <body background="7.jpg">
+
+    <nav>
+      <a href="Home.html" <a href="#">Home</a></a>
+      <a href="basics_of_inheritance.html" <a href="#">Basics Of Inheritance</a></a>
+      <a href="types_of_inheritance.html" <a href="#">Types Of Inheritance</a></a>
+      <a href="constructor.html"<a href="#">Constructor In Inheritance</a></a>
+      <a href="About_us.html" <a href="#">About Us</a></a>
+    </nav>
+    <h1 class="n" align = "center"> <b><u>Inheritance in Java</b></u></h1>
+    <b>Inheritance in Java</b> is a mechanism in which one object acquires all the properties and behaviors of a parent object.
+    <br> It is an important part of OOPs (Object Oriented programming system).
+    <br>
+    <br>
+    The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class,<br> you can reuse methods and fields of the parent class. Moreover, you can add new methods and fields in your current class also.
+    <br>
+    <br>
+    <b>Why use inheritance in java</b>
+    <ul>
+      <li>For Method Overriding (so runtime polymorphism can be achieved).</li>
+       <li>For Code Reusability.</li>
+    </ul>
+    <b>Terms used in Inheritance</b>
+    <ul>
+      <li><b>Class:</b>A class is a group of objects which have common properties. It is a template or blueprint from which objects are created.</li>
+      <li><b>Sub Class/Child Class:</b>Subclass is a class which inherits the other class. It is also called a derived class, extended class, or child class.</li>
+      <li><b>Super Class/Parent Class:</b>Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class.</li>
+      <li><b>Reusability:</b>As the name specifies, reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when<br> 
+        you create a new class. You can use the same fields and methods already defined in the previous class.</li>
+    </ul>
+    <b>The syntax of Java Inheritance</b>
+    <br>
+    <br>
+    <p class="a"><code>
+    class Subclass-name extends Superclass-name<br> 
+    {<br>
+     //methods and fields<br>  
+    }
+  </code>
+  </p>
+    <br>
+    <br>
+    The <b>extends keyword</b> indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
+    <br><br>In the terminology of Java, a class which is inherited is called a parent or superclass, and the new class is called child or subclass.<br><br>
+    <b>Java Inheritance Example</b>
+    <br>
+    <img src="1.jpg" height = 200 width = 200 >
+    <br>
+    <br>
+    As displayed in the above figure, Programmer is the subclass and Employee is the superclass. The relationship between the two classes is<b> Programmer IS-A Employee.</b><br> It means that Programmer is a type of Employee.
+    <br>
+    <br>
+    <b>Example</b>
+    <br>
+    <br>
+    <p class="b"><code>
+    class Employee{ <br> 
+      float salary=40000;<br>  
+     }  <br>
+     class Programmer extends Employee{  <br>
+      int bonus=10000; <br> 
+      public static void main(String args[]){  <br>
+        Programmer p=new Programmer(); <br> 
+        System.out.println("Programmer salary is:"+p.salary); <br> 
+        System.out.println("Bonus of Programmer is:"+p.bonus);<br>  
+     } <br> 
+     }  <br>
+    </code>
+     </p>
+     <br>
+     <b>Output</b>
+     <br>
+     <p class="k">
+     Programmer salary is:40000.0<br>
+     Bonus of programmer is:10000
+    </p>
+     <br>
+     <br>
+     In the above example, Programmer object can access the field of own class as well as of Employee class i.e. code reusability.
+
+
+
+  </body>
+</html>

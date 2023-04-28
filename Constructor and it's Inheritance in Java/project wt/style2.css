@@ -1,0 +1,19 @@
+nav{
+    text-align: center;
+    margin-top: 40%;
+}
+a{
+    display: flex;
+    padding: 10px 10px;
+    color: darkcyan;
+    background-color: coral;
+    font-weight: bold;
+    border-radius: 10%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+a:hover
+{
+    background-color: antiquewhite;
+    color: black;
+    opacity: inherit;
+}
